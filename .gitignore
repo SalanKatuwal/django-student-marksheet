@@ -1,0 +1,24 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+env/
+venv/
+
+# Django specific
+*.sqlite3
+*.log
+*.pot
+*.pyc
+
+# VSCode or PyCharm config
+.vscode/
+.idea/
+
+# Env variables
+.env
+
+# Static/media files (optional, depends on project)
+staticfiles/
+media/
