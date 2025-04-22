@@ -27,11 +27,10 @@ A web application built with Django to manage and display student marksheets. It
 - You donot need to enter any credentials to login as a student
 ![App Screenshot](/photos/student.png) 
 
-- From the student page you can simply search the marksheet by entering your marksheet if the student marksheet doesnot exist then the error message will be shown
+- From the student page you can simply search the marksheet by entering your Symbol Number and School Name if the detail does not match then the error will be shown as follows
 ![App Screenshot](/photos/searchfail.png) 
 
-- If the student details match then the same marksheet will be uploaded
-
+- If the student details match then the same marksheet as above will be shown
 ## Features
 
 - Handle the login properly only the superuser can login as a teacher
