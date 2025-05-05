@@ -1,86 +1,109 @@
 
 # Django Student Marksheet
 
-A web application built with Django to manage and display student marksheets. It allows teachers to input student details and their respective marks and generate the marksheet report as well as students can also view their academic performance.
+A web application built with Django to manage and display student marksheets. It allows teachers to input student details and their respective marks, generate marksheet reports, and enables students to view their academic performance.
+---
+## Live Demo
+Check out the project here [Demo 🡕](https://www.salankatuwal.com.np/marksheet.html)
+---
+## How It Works
 
+1. **Login as Teacher or Student**:
+     - Teachers log in using superuser credentials.
+     - Students can directly access their marksheets without credentials.
+     ![Login Page](/photos/login.png)
 
-## How the web app works
+2. **Invalid Login**:
+     - Displays an alert message if login credentials are incorrect.
+     ![Invalid Login](/photos/login2.png)
 
-- Login as a techer or student depending on your role
-![App Screenshot](/photos/login.png) 
+3. **Teacher Dashboard**:
+     - Teachers can input student details and marks.
+     ![Teacher Dashboard](/photos/home.png)
 
-- If a login credintals doesnot match then the alret message is shown in the login page
-![App Screenshot](/photos/login2.png)
+4. **Marksheet Generation**:
+     - Successfully generates a marksheet after inputting valid details.
+     ![Marksheet](/photos/marsheet.png)
 
-- If you login as a teacher then the home page is displayed where you have enter student details and marks as shown below
-![App Screenshot](/photos/home.png)
+5. **Error Handling**:
+     - Displays an error if the same marksheet is uploaded twice.
+     ![Duplicate Marksheet Error](/photos/samemarksheet.png)
 
-- After entering the marksheet details the marksheet will be generated as follows
-![App Screenshot](/photos/marsheet.png)
+6. **Failing Students**:
+     - Marksheets for failing students are highlighted in red.
+     ![Failing Marksheet](/photos/Fail.png)
 
-- If some error is occured during marksheet generation such as same marksheet uploaded twice
-![App Screenshot](/photos/samemarksheet.png)
+7. **Student Access**:
+     - Students can search for their marksheets using their symbol number and school name.
+     - Displays an error if the details do not match.
+     ![Student Search Error](/photos/searchfail.png)
 
-- If a student fails the exam then the marksheet will be in red color
-![App Screenshot](/photos/Fail.png) 
+8. **Successful Search**:
+     - Displays the marksheet if the details match.
+     ![Student Marksheet](/photos/student.png)
 
-- You donot need to enter any credentials to login as a student
-![App Screenshot](/photos/student.png) 
+---
 
-- From the student page you can simply search the marksheet by entering your Symbol Number and School Name if the detail does not match then the error will be shown as follows
-![App Screenshot](/photos/searchfail.png) 
-
-- If the student details match then the same marksheet as above will be shown
 ## Features
 
-- Handle the login properly only the superuser can login as a teacher
-- No registration is required to login as a student
-- Five subjects: English, Math, Nepali, Science and Health are given
-- Teacher have to enter Stuent name, symbol number, data of birth, school name, exam year and mark of 5 subject for marksheet generation
-- During marksheet generation various conditions are handled using try... catch... exception such as
-    - Negative mark cannot be entered
-    - Mark greater than 100 cannot be entered
-    - String cannot be entered as a student mark
-    - The symbol number cannot be entered twice
-    - The user cannot access the home page or report page both requires login
-- There is a 'logout' option for teacher in the home page as well as there is 'see student marksheet' button which will redirect teacher to student page
-- Student can only see the marksheet only if the marksheet exist in the database
+- **Role-Based Login**: Teachers can log in using superuser credentials, while students can access their marksheets without registration.
+- **Subject Management**: Supports five subjects: English, Math, Nepali, Science, and Health.
+- **Marksheet Generation**: Teachers can input student details (name, symbol number, date of birth, school name, exam year, and marks) to generate marksheets.
+- **Error Handling**: Includes robust validation to handle:
+    - Negative marks
+    - Marks greater than 100
+    - Non-numeric input for marks
+    - Duplicate symbol numbers
+- **Access Control**: Home and report pages are restricted to logged-in users.
+- **Teacher Features**: Teachers can log out or navigate to the student page to view marksheets.
+- **Student Features**: Students can search for their marksheets using their symbol number and school name.
+
+---
 
 ## Installation
 
-Clone the repository
+1. Clone the repository:
+     ```bash
+     git clone https://github.com/SalanKatuwal/django-student-marksheet.git
+     cd django-student-marksheet
+     ```
 
-```bash
-git clone https://github.com/SalanKatuwal/django-student-marksheet.git
-cd django-student-marksheet
-```
-Apply migrations
-```bash
-python manage.py migrate
-```
-Create the super user
-```bash
-python manage.py createsuperuser
-```
-Run the development server
-```bash
-python manage.py runserver
-```
+2. Apply migrations:
+     ```bash
+     python manage.py migrate
+     ```
+
+3. Create a superuser:
+     ```bash
+     python manage.py createsuperuser
+     ```
+
+4. Run the development server:
+     ```bash
+     python manage.py runserver
+     ```
+
+---
+
 ## Usage
 
-- Log in to the admin panel at http://127.0.0.1:8000/admin/ using the superuser credentials.
-- Login as a teacher at home page 
-- Add student profiles and their respective marks.
-- Students can view their marksheets by login as a student from the home page and entering their Symbol Number and School Name
+1. Log in to the admin panel at [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) using superuser credentials.
+2. Log in as a teacher from the home page.
+3. Add student profiles and their respective marks.
+4. Students can view their marksheets by entering their symbol number and school name on the student page.
+
+---
 
 ## Contributing
 
-Contributions are always welcome! Please fork the repository and submit a pull request. For major changes, open an issue first to discuss what you'd like to change.
+Contributions are welcome! Please fork the repository and submit a pull request. For major changes, open an issue first to discuss your ideas.
 
+---
 
 ## Acknowledgements
 
- - [Django Documentation](https://docs.djangoproject.com/en/5.2/)
- - [Python](https://docs.python.org/3/)
+- [Django Documentation](https://docs.djangoproject.com/en/5.2/)
+- [Python Documentation](https://docs.python.org/3/)
 
+---
 
